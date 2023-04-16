@@ -46,7 +46,7 @@ class Producto{
         void setDescripcion(string d){
             descripcion = d;
         }
-        void setPrecio(float p){ // Corregido: Debe ser float en vez de int
+        void setPrecio(float p){ 
             precio = p;
         }
         void setCantidad(int c){
