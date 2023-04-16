@@ -3,12 +3,14 @@
 
 using namespace std;
 
+//Se crea la clase producto
 class Producto{
-    private:
+    private://encapsulamiento de los atributos
         string nombre;
         string descripcion;
         float precio;
         int cantidad;
+    
     public:
         Producto() {
             nombre = "";
@@ -16,24 +18,28 @@ class Producto{
             precio = 0;
             cantidad = 0;
         }
+        //Constructor
         Producto(string nombre, string descripcion, float precio, int cantidad){
             this->nombre = nombre;
             this->descripcion = descripcion;
             this->precio = precio;
             this->cantidad = cantidad;
         }
+    
+        //creaccion de getters y setters(encapsulamiento)
         string getNombre(){
             return nombre;
         }
         string getDescripcion(){
             return descripcion;
         }
-        float getPrecio(){ // Corregido: Debe ser float en vez de int
+        float getPrecio(){
             return precio;
         }
         int getCantidad(){
             return cantidad;
         }
+        
         void setNombre(string n){
             nombre = n;
         }
@@ -48,16 +54,19 @@ class Producto{
         }
 };
 
+//Se crea la clase Tienda
 class Tienda {
-    private:
+    
+    private://encapsulamiento de los atributos
         Producto productos[100];
         int numProductos;
 
-    public:
+    public: 
+    //constructor
         Tienda() {
             numProductos = 0;
         }
-
+    //creación de métodos a usar
         void agregarProducto(Producto p){
             productos[numProductos] = p;
             numProductos++;
@@ -91,12 +100,15 @@ class Tienda {
 
 };
 int main(){
+    //Inicialización de las variables
     int opc;
     Tienda tienda;
     Producto p1("Leche","Lacteo",2,3);
     Producto p2("Arroz", "Cereal", 5, 10);
     tienda.agregarProducto(p1);
     tienda.agregarProducto(p2);
+    
+    //Creación de menú
     do{
         
         cout<<"Menu"<<endl;
@@ -104,6 +116,7 @@ int main(){
         cout<<"2. Ver lista de productos"<<endl;
         cout<<"3. Salir"<<endl;
         cin>>opc;
+        //Switch para poder usar y validar las opciones del menú
         switch (opc)
         {
         case 1:
